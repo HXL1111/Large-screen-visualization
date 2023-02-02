@@ -19,10 +19,12 @@ export const Chart7 = () => {
             type: 'pie',
             radius: ['75%', '90%'],
             avoidLabelOverlap: false,
+
             label: {
               show: true,
               position: 'inside',
-              textStyle: { color: 'white', fontSize: px(20) },
+              color: 'white',
+              fontSize: px(20),
               formatter(options) {
                 return options.value * 100 + '%'
               },

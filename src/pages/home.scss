@@ -247,6 +247,21 @@
           }
         }
       }
+      &-图2 {
+        width: px(290);
+        flex-shrink: 0;
+        .legend {
+          justify-content: flex-start;
+        }
+      }
+      &-图3 {
+        border: 1px solid #08397d;
+        h3 {
+          font-size: px(20);
+          color: #7ab6db;
+          margin-top: px(6);
+        }
+      }
     }
   }
 }
