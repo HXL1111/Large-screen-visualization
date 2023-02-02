@@ -13,5 +13,6 @@ export const baseEchartsOptions = {
     y: px(20),
     x2: px(20),
     y2: px(20),
+    containLabel: true
   },
 };
