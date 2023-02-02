@@ -11,7 +11,7 @@ export const Chart3 = () => {
       createEchartsOptions({
         legend: {
           bottom: px(10),
-          textStyle: { color: 'white' },
+          color: 'white',
           itemWidth: px(30),
           itemHeight: px(16),
         },
