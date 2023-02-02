@@ -69,6 +69,9 @@
     }
     > .section4 {
       grid-area: box4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     > .section5 {
       grid-area: box5;
@@ -78,7 +81,8 @@
     .发案趋势,
     .案发时段,
     .战果,
-    .籍贯 {
+    .籍贯,
+    .年龄段 {
       height: px(315);
       display: flex;
       flex-direction: column;
@@ -184,6 +188,26 @@
           bottom: px(10);
           right: px(10);
         }
+      }
+    }
+    .年龄段 {
+      display: flex;
+      flex-direction: column;
+      height: px(363);
+      > .charts {
+        width: 100%;
+        flex: 1;
+        border: 1px solid red;
+        display: flex;
+        padding: px(30);
+      }
+      &-图1,
+      &-图2,
+      &-图3 {
+        flex: 1;
+        border: 1px solid red;
+        display: flex;
+        flex-direction: column;
       }
     }
   }
