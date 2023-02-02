@@ -1,10 +1,6 @@
-import React from 'react';
-import './home.scss';
+import React from 'react'
+import './home.scss'
 
 export const Home = () => {
-  return (
-    <div>
-      你好
-    </div>
-  );
-};
+  return <div className="x"></div>
+}
