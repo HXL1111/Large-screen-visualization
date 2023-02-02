@@ -4,12 +4,23 @@ import { createEchartsOptions } from '../shared/create-echarts-options'
 
 export const Chart1 = () => {
   const divRef = useRef(null)
-  useEffect(() => {
-    var myChart = echarts.init(divRef.current)
-    myChart.setOption(
+  const myChart = useRef(null)
+  const data = [
+    { name: '关城区', number: 10 },
+    { name: '关城区', number: 20 },
+    { name: '关城区', number: 26 },
+    { name: '关城区', number: 31 },
+    { name: '关城区', number: 11 },
+    { name: '关城区', number: 15 },
+    { name: '关城区', number: 19 },
+    { name: '关城区', number: 10 },
+    { name: '关城区', number: 6 },
+  ]
+  const x = (data) => {
+    myChart.current.setOption(
       createEchartsOptions({
         xAxis: {
-          data: ['关城区', '七里河区', '西固区', '安宁区', '红古区', '永登区', '皋兰区', '榆中区', '兰州新区'],
+          data: data.map((i) => i.name),
           axisTick: { show: false },
           axisLine: {
             lineStyle: { color: '#083B70' },
@@ -36,12 +47,32 @@ export const Chart1 = () => {
         series: [
           {
             type: 'bar',
-            data: [10, 20, 36, 41, 15, 26, 37, 18, 29],
+            data: data.map((i) => i.number),
           },
         ],
       })
     )
-  })
+  }
+  useEffect(() => {
+    setInterval(() => {
+      const newData = [
+        { name: '关城区', number: Math.random() * 10 },
+        { name: '七里河区', number: Math.random() * 10 },
+        { name: '西固区', number: Math.random() * 10 },
+        { name: '安宁区', number: Math.random() * 10 },
+        { name: '红古区', number: Math.random() * 10 },
+        { name: '永登区', number: Math.random() * 10 },
+        { name: '皋兰区', number: Math.random() * 10 },
+        { name: '榆中区', number: Math.random() * 10 },
+        { name: '兰州新区', number: Math.random() * 10 },
+      ]
+      x(newData)
+    }, 1000)
+  }, [])
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current)
+    x(data)
+  }, [])
   return (
     <div className="bordered 管辖统计">
       <h2>案发派出所管辖统计</h2>
