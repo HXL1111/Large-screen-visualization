@@ -74,7 +74,8 @@
       grid-area: box5;
     }
     .管辖统计,
-    .破获排名 {
+    .破获排名,
+    .发案趋势 {
       height: px(315);
       display: flex;
       flex-direction: column;
@@ -117,6 +118,9 @@
           background: linear-gradient(90deg, #b92ae8 0%, #6773e7 100%);
         }
       }
+    }
+    .发案趋势 {
+      height: px(345);
     }
   }
 }
